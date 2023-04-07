@@ -2,7 +2,7 @@ package com.yablokovs.leetcode.array;
 
 import java.util.Arrays;
 
-public class EFloodFill733 {
+public class FloodFillE733 {
 
     public static void main(String[] args) {
 

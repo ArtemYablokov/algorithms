@@ -2,7 +2,12 @@ package com.yablokovs.leetcode.array;
 
 import java.util.Arrays;
 
-public class EFloodFillGood733 {
+/**
+* Visited matrix not required because if color in matrix and new color are the same -> nothing need to be done.
+* */
+
+
+public class FloodFillGoodE733 {
 
     public static void main(String[] args) {
 
