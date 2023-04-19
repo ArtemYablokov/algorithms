@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-public class ContainsDuplicate {
+public class ContainsDuplicate_E_217 {
 
     public boolean containsDuplicateNlgN(int[] nums) {
         Arrays.sort(nums);

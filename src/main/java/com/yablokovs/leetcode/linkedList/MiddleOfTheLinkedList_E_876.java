@@ -10,7 +10,7 @@ package com.yablokovs.leetcode.linkedList;
  * */
 
 
-public class MiddleOfTheLinkedListE876 {
+public class MiddleOfTheLinkedList_E_876 {
 
 
     //Definition for singly-linked list.
