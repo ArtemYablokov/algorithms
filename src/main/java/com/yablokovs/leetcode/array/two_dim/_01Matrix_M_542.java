@@ -1,37 +1,85 @@
 package com.yablokovs.leetcode.array.two_dim;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class _01Matrix_M_542 {
 
     public static void main(String[] args) {
-        List<int[]> visited = new ArrayList<>();
-        System.out.println(visited.size() == 0);
+        int[][] source = {{0, 0, 0}, {0, 1, 0}, {1, 1, 1}};
+        int[][] source2 = {{0, 0, 0}, {1, 1, 0}, {1, 1, 0}};
+        int[][] source3 = {{0}, {0}, {0}};
+
+        int[][] ints = updateMatrix(source3);
+
+        int n = 0;
     }
 
-    private static final Integer outOfBound = Integer.MAX_VALUE;
-    private static final boolean found = false;
+    private static int notZeroCounter = 0;
 
-    public int[][] updateMatrix(int[][] mat) {
-        int length = mat.length;
-        return mat;
+    public static int[][] updateMatrix(int[][] mat) {
+        int len = mat.length;
+        int high = mat[0].length;
 
+
+        int[][] distance = new int[len][high];
+        int initialNumber = 0;
+
+        // fill up matrix with 0 or -1
+        for (int i = 0; i < len; i++) {
+            for (int j = 0; j < high; j++) {
+                if (mat[i][j] == 0)
+                    distance[i][j] = 0;
+                else {
+                    distance[i][j] = -1;
+                    notZeroCounter++;
+                }
+            }
+        }
+        while (notZeroCounter > 0) {
+            for (int i = 0; i < len; i++) {
+                for (int j = 0; j < high; j++) {
+                    int current = distance[i][j];
+                    if (current == initialNumber)
+                        setupAllNearCell1Distance(i, j, initialNumber, distance, len, high);
+                }
+            }
+            initialNumber++;
+        }
+        return distance;
     }
 
-    private static List<int[]> recursive(int[][] mat, int i, int j, int length) {
-        if (i < 0 || i == length || j < 0 || j == length) return null; // если вышли за пределы
-        if (found) return null;
+    private static void setupAllNearCell1Distance(int i, int j, int initialNumber, int[][] distance, int length, int high) {
+        int up = j - 1;
+        int down = j + 1;
+        int left = i - 1;
+        int right = i + 1;
 
-
-        if (mat[i][j] < 0) return Math.abs(mat[i][j]); // уже вычисленно
-
-        if (mat[i][j] == 0) return null;
-
-        // calls recursive 4-times
-
-        int minPath = -1 * (Math.min(0, 1) + 1); // пометить минусом вычисленные
-        mat[i][j] = minPath;
-        return minPath; // вернуть наименьшее из 4-х путей
+        setValue(left, j, initialNumber, distance, length, high);
+        setValue(right, j, initialNumber, distance, length, high);
+        setValue(i, up, initialNumber, distance, length, high);
+        setValue(i, down, initialNumber, distance, length, high);
     }
+
+    private static void setValue(int i, int j, int initialNumber, int[][] distance, int length, int high) {
+        if (!outOfBounds(i, j, length, high)) {
+            int current = distance[i][j];
+            if (current == -1) {
+                distance[i][j] = initialNumber + 1;
+                notZeroCounter--;
+            }
+        }
+    }
+
+    private static boolean outOfBounds(int x, int y, int length, int high) {
+        return x < 0 || y < 0 || x == length || y == high;
+    }
+
+    private class Tuple {
+        public Tuple(int x, int y) {
+            this.x = x;
+            this.y = y;
+        }
+
+        int x;
+        int y;
+    }
+
 }
