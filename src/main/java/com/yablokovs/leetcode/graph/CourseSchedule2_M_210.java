@@ -12,7 +12,8 @@ public class CourseSchedule2_M_210 {
 
     public static void main(String[] args) {
 
-        int[] order = findOrder(5, new int[][]{{0, 1}, {0, 2}, {1, 2}, {1, 3}, {2, 3}, {3, 4}/*, {4, 2}*/});
+//        int[] order = findOrder(5, new int[][]{{0, 1}, {0, 2}, {1, 2}, {1, 3}, {2, 3}, {3, 4}/*, {4, 2}*/});
+        int[] order6 = findOrder(6, new int[][]{{3, 1}, {0, 5}, {0, 4}, {1, 0}, {2, 3}, {2, 0}});
         int n = 0;
 
     }

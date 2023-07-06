@@ -10,6 +10,24 @@ public class ClimbingStairs_E_70 {
         int n = 0;
     }
 
+    public int climbingStairsFib2(int n) {
+        if (n < 3) return n;
+
+
+        int current = 0;
+        int _2before = 1;
+        int _1before = 2;
+
+        for (int i = 2; i < n; i++) {
+            current = _2before + _1before;
+            _2before = _1before;
+            _1before = current;
+        }
+
+
+        return current;
+    }
+
     public int climbStairsFibonacci(int n) {
         if (n == 1) return 1;
 
