@@ -1,4 +1,4 @@
-package com.yablokovs.leetcode.dynamic;
+package com.yablokovs.leetcode.dp;
 
 public class HouseRobber {
 

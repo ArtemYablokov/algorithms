@@ -1,8 +1,6 @@
-package com.yablokovs.leetcode.dynamic;
+package com.yablokovs.leetcode.dp;
 
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class HouseRobberTest {
 
