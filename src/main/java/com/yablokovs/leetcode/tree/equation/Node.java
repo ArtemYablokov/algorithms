@@ -1,0 +1,13 @@
+package com.yablokovs.leetcode.tree.equation;
+
+class Node {
+    String value;
+    Node left;
+    Node right;
+
+    Node(String value) {
+        this.value = value;
+        this.left = null;
+        this.right = null;
+    }
+}
