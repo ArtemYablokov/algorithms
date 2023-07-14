@@ -1,4 +1,4 @@
-package com.yablokovs.leetcode.tree.equation;
+package com.yablokovs.leetcode.tree.tree_math;
 
 import org.junit.jupiter.api.Test;
 
@@ -10,7 +10,7 @@ class EquationTreeGeneratorTest {
         EquationTreeGenerator equationTreeGenerator = new EquationTreeGenerator();
 
         int depth = 3;
-        Node tree = equationTreeGenerator.generateEquationTree(depth);
+        Node tree = equationTreeGenerator.generateEquationTree(depth, "+");
 
         String string = equationTreeGenerator.printTree(tree);
         int i = equationTreeGenerator.solveEquationTree(tree);

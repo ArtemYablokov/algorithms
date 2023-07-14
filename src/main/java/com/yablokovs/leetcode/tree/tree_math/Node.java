@@ -1,4 +1,4 @@
-package com.yablokovs.leetcode.tree.equation;
+package com.yablokovs.leetcode.tree.tree_math;
 
 class Node {
     String value;
