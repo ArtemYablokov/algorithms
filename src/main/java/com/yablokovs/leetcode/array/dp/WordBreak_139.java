@@ -1,4 +1,4 @@
-package com.yablokovs.leetcode.array.backtracking;
+package com.yablokovs.leetcode.array.dp;
 
 import java.util.Arrays;
 import java.util.List;
@@ -87,7 +87,7 @@ public class WordBreak_139 {
     }
 
 
-    public boolean wordBreak2(String s, Set<String> dict) {
+    public boolean wordBreakLetterApproach(String s, Set<String> dict) {
         if (s == null || s.length() == 0)
             return false;
         int n = s.length();
@@ -114,7 +114,7 @@ public class WordBreak_139 {
 //         increment index to word length and recurse until end of word, returning true
 // else nothing found to work so return false
 
-    public boolean wordBreak3(String s, List<String> wordDict) {
+    public boolean wordBreakWordApproach(String s, List<String> wordDict) {
         byte[] dp = new byte[s.length()];    // dp[i] = if possible to use words from wordDict to make s up to index i
         Arrays.fill(dp, (byte) -1);          // initialize all to -1 to indicate not calculated yet
 

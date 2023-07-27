@@ -1,5 +1,6 @@
 package com.yablokovs.leetcode.array.backtracking;
 
+import com.yablokovs.leetcode.array.dp.WordBreak_139;
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.Test;
 
@@ -19,7 +20,7 @@ class WordBreak139Test {
 
 
         WordBreak_139 wordBreak139 = new WordBreak_139();
-        wordBreak139.wordBreak2("acabaad", Set.of("ab", "ac", "aad"));
+        wordBreak139.wordBreakLetterApproach("acabaad", Set.of("ab", "ac", "aad"));
 
 
 
