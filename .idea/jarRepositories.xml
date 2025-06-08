@@ -16,5 +16,15 @@
       <option name="name" value="JBoss Community repository" />
       <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="maven" />
+      <option name="url" value="https://registry.lab.egencia.cloud:443/artifactory/maven" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="snapshots" />
+      <option name="name" value="maven" />
+      <option name="url" value="https://registry.lab.egencia.cloud:443/artifactory/maven" />
+    </remote-repository>
   </component>
 </project>

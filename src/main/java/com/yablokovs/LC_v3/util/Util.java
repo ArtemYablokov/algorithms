@@ -8,6 +8,35 @@ public class Util {
         return Arrays.copyOf(arr, arr.length);
     }
 
+    // [[0,6,7],[0,1,2],[1,2,3],[1,3,3],[6,3,3],[3,5,1],[6,5,1],[2,5,1],[0,4,5],[4,6,2]]
+    public static int[][] build2d(String arrays) {
+        String[] split = getSubStrings(arrays);
+
+        int[][] result = new int[split.length][];
+
+        for (int i = 0; i < result.length; i++) {
+            String cur = split[i]; // 0,6,7
+            String[] subStrings = cur.split(",");
+            int[] t = new int[subStrings.length];
+            for (int j = 0; j < t.length; j++) {
+                t[j] = Integer.parseInt(subStrings[j]);
+            }
+            result[i] = t;
+        }
+
+        return result;
+    }
+
+    private static String[] getSubStrings(String arrays) {
+        StringBuilder sb = new StringBuilder(arrays);
+        sb.deleteCharAt(0);
+        sb.deleteCharAt(0);
+        sb.deleteCharAt(sb.length() - 1);
+        sb.deleteCharAt(sb.length() - 1);
+        String s = sb.toString();
+        return s.split("\\],\\[");
+    }
+
     public static StringBuilder printSW(int[] a, int i, int j) {
         StringBuilder sb = new StringBuilder();
 
